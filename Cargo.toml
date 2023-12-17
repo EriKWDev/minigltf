@@ -1,0 +1,12 @@
+[package]
+name = "minigltf"
+description = "a small gltf parser with minimal dependencies and fast compilation"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+readme = "README.md"
+authors = ["Erik W. Gren <ErikWDev@gmail.com>"]
+
+[dependencies]
+serde = { version="*", features=["serde_derive"] }
+serde_json.version = "*"
