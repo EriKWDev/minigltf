@@ -8,5 +8,5 @@ readme = "README.md"
 authors = ["Erik W. Gren <ErikWDev@gmail.com>"]
 
 [dependencies]
-serde = { version="*", features=["serde_derive"] }
-serde_json.version = "*"
+serde = { version="1", features=["serde_derive"] }
+serde_json.version = "1"
