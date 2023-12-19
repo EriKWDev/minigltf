@@ -177,6 +177,16 @@ impl std::fmt::Display for GltfError {
     }
 }
 
+impl std::error::Error for GltfError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match self {
+            GltfError::Io(err) => Some(err),
+            GltfError::JsonParseError(err) => Some(err),
+            GltfError::PathExtensionNotGltf => None,
+        }
+    }
+}
+
 impl Gltf {
     #[inline]
     pub fn from_path<P>(gltf_path: P) -> Result<Self, GltfError>
