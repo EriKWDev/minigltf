@@ -191,7 +191,21 @@ pub struct Info {
 
 pub mod extensions {
     #[derive(Default, Clone, Debug, serde::Deserialize)]
-    pub struct InfoExtensions {}
+    pub struct InfoExtensions {
+        #[serde(rename = "KHR_texture_transform")]
+        pub khr_texture_transform: Option<KHR_Texture_Transform>,
+    }
+
+    #[allow(non_camel_case_types)]
+    #[derive(Default, Clone, Debug, serde::Deserialize)]
+    pub struct KHR_Texture_Transform {
+        #[serde(default)]
+        pub offset: Option<[f32; 2]>,
+        #[serde(default)]
+        pub scale: Option<[f32; 2]>,
+        #[serde(default)]
+        pub rotation: Option<f32>,
+    }
 
     #[derive(Default, Clone, Debug, serde::Deserialize)]
     pub struct TextureExtensions {}
